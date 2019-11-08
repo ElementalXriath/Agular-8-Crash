@@ -1,11 +1,16 @@
 <mat-card>
   <h3>Make a post...</h3> <br/>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
   <mat-form-field>
-    <textarea matInput rows="6" [(ngModel)]="enteredValue">{{ newPost }}</textarea>
+    <input matInput type="text" ngModel name="title" required placeholder="Title">
   </mat-form-field>
-  <button mat-button (click)="onAddPost(postInput)">Save Post</button>
+  <mat-form-field>
+    <textarea matInput rows="3" ngModel name="content" placeholder="Post">{{ newPost }}</textarea>
+  </mat-form-field>
+  <button mat-button type="submit">Save Post</button>
+</form>
 </mat-card>
 
 <hr/>
 
-<p>{{ newPost }}</p>
+
