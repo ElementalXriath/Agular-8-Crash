@@ -7,7 +7,6 @@ import { Post } from '../post.model';
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.css']
-
 })
 
 export class PostListComponent implements OnInit {
@@ -18,7 +17,7 @@ export class PostListComponent implements OnInit {
   constructor(public postService: PostService) {}
 
   ngOnInit(){
-    this.posts = this.postService.getPost();
+    this.postService.getPost();
     this.postSub = this.postService.getPostUpdatedListener().subscribe((posts: Post[]) => {
       this.posts = posts;
     });

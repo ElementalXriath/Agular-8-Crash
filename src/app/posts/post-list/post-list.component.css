@@ -6,3 +6,7 @@ mat-card {
   margin: auto;
   width: 80%;
 }
+
+mat-panel-title {
+  color: black
+}
